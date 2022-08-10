@@ -15,6 +15,14 @@ import {
 } from 'react-bootstrap';
 
 export default function App() {
+  let component;
+  switch (window.location.pathname) {
+    case '#':
+      break;
+    case '/Home':
+      component = <Home />;
+      break;
+  }
   return (
     <div>
       <div style={{ visibility: '' }}>
@@ -66,10 +74,7 @@ export default function App() {
           </Container>
         </Navbar>
       </div>
-      <div></div>
-      <Layout>
-        <Route exact path="/" component={Home} />
-      </Layout>
+      <div>{component}</div>
     </div>
   );
 }
